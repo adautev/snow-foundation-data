@@ -1,0 +1,114 @@
+﻿@using System.Collections.Generic
+@using ITCE.SNOW.Domain
+@using ITCE.SNOW.Domain.Validation
+@if (ViewBag.validationSummaries == null)
+{
+    <div class="bg-info" style="padding: 10px;">
+        <h4>Instructions</h4>
+        Delete all rows before the black header row in the template. Make sure the black row is the starting row for all sheets.<br/>
+        Make sure that the sheets and their columns are named as follows:
+        <ul>
+            <li>
+                Support Groups
+                <ul>
+                    <li>Country</li>
+                    <li>Group Name</li>
+                    <li>Manager Name</li>
+                    <li>Group Email</li>
+                    <li>Group Members (one row for each member)</li>
+                </ul>
+            </li>
+            <li>
+                Business Services
+                <ul>
+                    <li>Country</li>
+                    <li>Name</li>
+                    <li>Assignment Group US</li>
+                    <li>Assignment Group GR</li>
+                    <li>Business Criticality US</li>
+                    <li>Business Criticality GR</li>
+                    <li>Comments</li>
+                    <li>Managed By US</li>
+                    <li>Managed By GR</li>
+                </ul>
+            </li>
+            <li>
+                ServicePortalRequests
+                <ul>
+                    <li>Country</li>
+                    <li>Self-service portal category</li>
+                    <li>Self-service portal sub category</li>
+                    <li>Request  Name</li>
+                    <li>Related Business Service</li>
+                    <li>Description</li>
+                    <li>Approver (Person, or role, e.g. Line Manager)</li>
+                    <li>Implementer Group</li>
+                    <li>Department name (if only specific department should see this entry)</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+}
+<form method="post" asp-action="Index" asp-controller="Validation" enctype="multipart/form-data">
+    <input type="file" name="files" multiple />
+    <input type="submit" value="Upload" />
+</form>
+
+@if (ViewBag.validationSummaries != null)
+{
+    var summaries = ViewBag.validationSummaries as List<object>;
+    if (summaries != null)
+    {
+        foreach (var summary in summaries)
+        {
+            if (summary is IValidationSummary<SupportGroup>)
+            {
+                var supportGroupSummary = summary as IValidationSummary<SupportGroup>;
+                <p>Validation for: @supportGroupSummary.Name</p>
+                <hr />
+                foreach (var validationMessage in supportGroupSummary.Messages)
+                {
+                    <p><strong>@Html.Raw(validationMessage.Message)</strong>
+                        <br/>reference: @validationMessage.Reference.Reference</p>
+                }
+            }
+            if (summary is IValidationSummary<BusinessService>)
+            {
+                var businessServiceSummary = summary as IValidationSummary<BusinessService>;
+                <p>Validation for: @businessServiceSummary.Name</p>
+                <hr />
+                foreach (var validationMessage in businessServiceSummary.Messages)
+                {
+                    <p>
+                        <strong>@Html.Raw(validationMessage.Message)</strong>
+                        <br />reference: @validationMessage.Reference.Reference
+                    </p>
+                }
+            }
+            if (summary is IValidationSummary<ServicePortalRequest>)
+            {
+                var serviceRequestSummary = summary as IValidationSummary<ServicePortalRequest>;
+                <p>Validation for: @serviceRequestSummary.Name</p>
+                <hr />
+                foreach (var validationMessage in serviceRequestSummary.Messages)
+                {
+                    <p>
+                        <strong>@Html.Raw(validationMessage.Message)</strong>
+                        <br />reference: @validationMessage.Reference.Reference
+                    </p>
+                }
+            }
+        }
+    }
+}
+@if (ViewBag.validationSummaries != null)
+{
+    <p  class="bg-warning" style="padding: 10px;">Once you are sure everything is valid you can export the following CSV files for ServiceNow:
+    </p>
+    <ul>
+        <li><a href="/export/supportgroups">Support Groups</a></li>
+        <li><a href="/export/supportgroupmembers">Support Group Members</a></li>
+        <li><a href="/export/businessservices">Business Services</a></li>
+        <li><a href="/export/ServiceCatalogRequests">Service Catalog Requests</a></li>
+    </ul>
+}

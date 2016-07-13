@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>c0ec4ff7-bbb8-4c96-b635-2b12dc388a40</ProjectGuid>
+    <RootNamespace>ITCE.SNOW.FoundationData</RootNamespace>
+    <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
+    <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ApplicationInsightsResourceId>/subscriptions/1f713e2b-de12-4c8a-8d5b-3ee2bdb648e6/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/ITCE.snow-foundation-data-validator</ApplicationInsightsResourceId>
+  </PropertyGroup>
+  <ItemGroup>
+    <DnxInvisibleContent Include="bower.json" />
+    <DnxInvisibleContent Include=".bowerrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ITCE.SNOW.Data.AzureDataTable\ITCE.SNOW.Data.AzureDataTable.csproj" />
+    <ProjectReference Include="..\..\ITCE.SNOW.Data.Excel\ITCE.SNOW.Data.Excel.csproj" />
+    <ProjectReference Include="..\..\ITCE.SNOW.Data.ServiceNow\ITCE.SNOW.Data.ServiceNow.csproj" />
+    <ProjectReference Include="..\..\ITCE.SNOW.Domain.Dtos.V1\ITCE.SNOW.Dtos.V1.csproj" />
+    <ProjectReference Include="..\..\ITCE.SNOW.Domain\ITCE.SNOW.Domain.csproj" />
+    <ProjectReference Include="..\..\ITCE.SNOW.Services\ITCE.SNOW.Services.csproj" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\DotNet.Web\Microsoft.DotNet.Web.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

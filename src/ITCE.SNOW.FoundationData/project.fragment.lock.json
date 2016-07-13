@@ -1,0 +1,138 @@
+{
+  "version": 2,
+  "exports": {
+    "ITCE.SNOW.Data.AzureDataTable/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/ITCE.SNOW.Data.AzureDataTable.dll": {}
+      },
+      "runtime": {
+        "../packages/Microsoft.Azure.KeyVault.Core.1.0.0/lib/net40/Microsoft.Azure.KeyVault.Core.dll": {},
+        "../packages/Microsoft.Data.Edm.5.7.0/lib/net40/Microsoft.Data.Edm.dll": {},
+        "../packages/Microsoft.Data.OData.5.7.0/lib/net40/Microsoft.Data.OData.dll": {},
+        "../packages/Microsoft.Data.Services.Client.5.7.0/lib/net40/Microsoft.Data.Services.Client.dll": {},
+        "../packages/Microsoft.WindowsAzure.ConfigurationManager.3.2.1/lib/net40/Microsoft.WindowsAzure.Configuration.dll": {},
+        "../packages/Newtonsoft.Json.9.0.1/lib/net45/Newtonsoft.Json.dll": {},
+        "../packages/System.Spatial.5.7.0/lib/net40/System.Spatial.dll": {},
+        "../packages/WindowsAzure.Storage.7.1.2/lib/net40/Microsoft.WindowsAzure.Storage.dll": {},
+        "bin/Debug/ITCE.SNOW.Data.AzureDataTable.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/ITCE.SNOW.Data.AzureDataTable.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "ITCE.SNOW.Data.Excel/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/ITCE.SNOW.Data.Excel.dll": {}
+      },
+      "runtime": {
+        "../packages/ExcelDataReader.2.1.2.3/lib/net45/Excel.dll": {},
+        "../packages/SharpZipLib.0.86.0/lib/20/ICSharpCode.SharpZipLib.dll": {},
+        "bin/Debug/ITCE.SNOW.Data.Excel.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/ITCE.SNOW.Data.Excel.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "ITCE.SNOW.Data.ServiceNow/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/ITCE.SNOW.Data.ServiceNow.dll": {}
+      },
+      "runtime": {
+        "../packages/Newtonsoft.Json.9.0.1/lib/net45/Newtonsoft.Json.dll": {},
+        "../packages/RestSharp.105.2.3/lib/net46/RestSharp.dll": {},
+        "bin/Debug/ITCE.SNOW.Data.ServiceNow.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/ITCE.SNOW.Data.ServiceNow.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "ITCE.SNOW.Dtos.V1/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/ITCE.SNOW.Dtos.V1.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/ITCE.SNOW.Dtos.V1.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/ITCE.SNOW.Dtos.V1.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "ITCE.SNOW.Domain/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/ITCE.SNOW.Domain.dll": {}
+      },
+      "runtime": {
+        "../packages/FluentValidation.6.2.1.0/lib/Net45/FluentValidation.dll": {},
+        "bin/Debug/ITCE.SNOW.Domain.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/ITCE.SNOW.Domain.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "ITCE.SNOW.Services/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/ITCE.SNOW.Services.dll": {}
+      },
+      "runtime": {
+        "../packages/FluentValidation.6.2.1.0/lib/Net45/FluentValidation.dll": {},
+        "bin/Debug/ITCE.SNOW.Services.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/ITCE.SNOW.Services.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "ITCE.SNOW.Data/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/ITCE.SNOW.Data.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/ITCE.SNOW.Data.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/ITCE.SNOW.Data.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}
